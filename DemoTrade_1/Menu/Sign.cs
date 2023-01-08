@@ -11,6 +11,8 @@ namespace DemoTrade_1
     {
         public Sign()
         {
+
+
             inputWindowSig();
             inputData();
         }
