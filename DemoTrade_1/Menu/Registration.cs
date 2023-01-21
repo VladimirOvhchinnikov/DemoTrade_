@@ -9,7 +9,7 @@ namespace DemoTrade_1
 {
     class Registration : LogAndReg
     {
-        public void start()
+        public new void  start()
         {
             Console.Clear();
             inputWindow();
@@ -88,6 +88,8 @@ namespace DemoTrade_1
                     {
                         sqlite.AddUser(user);
                         Console.WriteLine("Registration completed");
+                        Thread.Sleep(3000);
+                        sqlite.addNewCashNewUser(user);
                         Sign sign = new Sign();
                         sign.start();
                     }

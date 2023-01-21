@@ -4,18 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using DemoTrade_1.Menu;
 
 namespace DemoTrade_1
 {
+    
+
     class Sign : LogAndReg
     {
-        public Sign()
+
+        public User user = new User();
+
+
+        public new void start()
         {
-
-
             inputWindowSig();
             inputData();
         }
+
 
         /*Вывод статичной информации для выбора действия */
         private void inputWindowSig()
@@ -38,7 +44,6 @@ namespace DemoTrade_1
         /*Ввод данных в консоль и их проверка*/
         private void inputData()
         {
-            User user = new User();
 
             while (true) 
             {
@@ -71,7 +76,6 @@ namespace DemoTrade_1
 
                     /*Инициализация скл класса*/
                     Sqlite sqlite = new Sqlite();
-                    sqlite.Connection();
 
 
                     /*Поиск логина и пароля в базе данных
@@ -79,8 +83,11 @@ namespace DemoTrade_1
                      */
                     if (sqlite.SearchData(user.Login, "login") == true && sqlite.SearchData(user.Password,"password"))
                     {
-                        Console.WriteLine("!!!!!!!!!!!!!!!");
+                        Basic basic = new Basic(user);
+                        basic.inputWindow();
+                        basic.MoveMenu();
                         break;
+                        
                     }
                     else
                     /*Если нет, повторный ввод данных*/

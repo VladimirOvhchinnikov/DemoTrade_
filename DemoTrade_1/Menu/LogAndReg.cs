@@ -39,6 +39,7 @@ namespace DemoTrade_1
             return  Console.ReadLine();
         }
 
+        /*Вывод  консольных данных */
         protected void inputConsole(int x, int y, string str) 
         {
             Console.SetCursorPosition(x, y);
@@ -47,8 +48,10 @@ namespace DemoTrade_1
 
 
         /*Определяет нажатую кнопку*/
-        private ConsoleKey characterDefinition()
-        { 
+        protected ConsoleKey characterDefinition()
+        {    
+            Console.SetCursorPosition(40, 20);
+            Console.WriteLine("  ");
             return Console.ReadKey().Key;
         }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using DemoTrade_1.Menu;
 
 namespace DemoTrade_1
 {
@@ -6,7 +7,6 @@ namespace DemoTrade_1
     {
         static void Main(string[] args)
         {
-            Console.SetWindowSize(80, 26);
 
             LogAndReg logAndReg = new LogAndReg();
             logAndReg.start();

@@ -8,18 +8,20 @@ namespace DemoTrade_1
 {
     class DataChecking
     {
-
+        /*Проверка на отсуствия данных*/
         internal bool checkNull(string str)
         {
             if (str == "")  return true;
             else return false;
         }
 
+        /*Понижение регистра*/
         internal string decreaseWord(string str)
         {
             return str.ToLower();
         }
 
+        /*Проверка на отсуствия данных возварт булевого значения*/
         internal bool checkString(string str)
         {
 
@@ -32,6 +34,15 @@ namespace DemoTrade_1
                 decreaseWord(str);
                 return true;
             }
+        }
+
+        internal bool maxSum(double sum, double buy) 
+        {
+            if (sum > buy)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

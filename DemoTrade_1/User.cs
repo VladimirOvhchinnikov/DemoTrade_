@@ -4,6 +4,7 @@ using System.Text;
 
 namespace DemoTrade_1
 {
+
     class User
     {
 
@@ -13,6 +14,4 @@ namespace DemoTrade_1
         public string Password { get; set; }
 
     } 
-
-  
 }
