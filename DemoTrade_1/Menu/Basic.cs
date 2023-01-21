@@ -58,11 +58,6 @@ namespace DemoTrade_1.Menu
             inputConsole(70, 1, "Price "+ symbol + " -> ");
             inputConsole(84, 1, parsing.parsPrice(Price));
         }
-        
-        public void singInformation()
-        {
-
-        }
 
         public void MoveMenu()
         {
@@ -110,8 +105,6 @@ namespace DemoTrade_1.Menu
                 }
                 if(characterDefinition() == ConsoleKey.B)
                 {
-                    DataChecking dataChecking = new DataChecking();
-
                     inputConsole(78, 7, symbol);
                     inputConsole(70, 8, "sum-->>");
                     Console.SetCursorPosition(78, 8);
@@ -124,12 +117,12 @@ namespace DemoTrade_1.Menu
 
                         BuyAndSell buyAndSell = new BuyAndSell();
 
-                        if (dataChecking.checkNull(sumBuy)  == true)
+                        if (DataChecking.checkNull(sumBuy)  == true)
                         {
                             inputConsole(70, 15, "Error input null");
                         } else
                         {
-                            buyAndSell.buy(user,Convert.ToDouble(sumBuy), symbol);
+                            buyAndSell.Buy(user,Convert.ToDouble(sumBuy), symbol);
                             inputConsole(78, 8, "                   ");
                             break;
                         }
@@ -137,8 +130,6 @@ namespace DemoTrade_1.Menu
                 }
                 if (characterDefinition() == ConsoleKey.S)
                 {
-                    DataChecking dataChecking = new DataChecking();
-
                     inputConsole(78, 7, symbol);
                     inputConsole(70, 8, "sum-->>");
                     Console.SetCursorPosition(78, 8);
@@ -151,13 +142,13 @@ namespace DemoTrade_1.Menu
 
                         BuyAndSell buyAndSell = new BuyAndSell();
 
-                        if (dataChecking.checkNull(sumSell) == true)
+                        if (DataChecking.checkNull(sumSell) == true)
                         {
                             inputConsole(70, 15, "Error input null");
                         }
                         else
                         {
-                            buyAndSell.sell(user, Convert.ToDouble(sumSell), symbol);
+                            buyAndSell.Sell(user, Convert.ToDouble(sumSell), symbol);
                             inputConsole(78, 8, "                   ");
                             break;
                         }

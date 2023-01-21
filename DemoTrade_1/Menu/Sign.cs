@@ -55,9 +55,8 @@ namespace DemoTrade_1
                 user.Password = EnterUserData(44, 11); ;
 
                 /*Проверка пароля на правильность ввода*/
-                DataChecking dataChecking = new DataChecking();
-                bool checkLogin = dataChecking.checkString(user.Login);
-                bool checkPassword = dataChecking.checkString(user.Password);
+                bool checkLogin = DataChecking.checkString(user.Login);
+                bool checkPassword = DataChecking.checkString(user.Password);
 
                 /*Если данные введены не корректно*/
                 if (checkLogin == false || checkPassword == false)
@@ -70,9 +69,7 @@ namespace DemoTrade_1
                 /*Если данные введены корректно*/
                 if (checkLogin == true && checkPassword == true)
                 {
-                    /*Инициализация хэш класса*/
-                    Hash hash = new Hash();
-                    user = hash.hashingUser(user);
+                    user = Hash.hashingUser(user);
 
                     /*Инициализация скл класса*/
                     Sqlite sqlite = new Sqlite();

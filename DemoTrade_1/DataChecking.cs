@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace DemoTrade_1
 {
-    class DataChecking
+    static class DataChecking
     {
         /*Проверка на отсуствия данных*/
-        internal bool checkNull(string str)
+        static internal bool checkNull(string str)
         {
             if (str == "")  return true;
             else return false;
         }
 
         /*Понижение регистра*/
-        internal string decreaseWord(string str)
+        static internal string decreaseWord(string str)
         {
             return str.ToLower();
         }
 
         /*Проверка на отсуствия данных возварт булевого значения*/
-        internal bool checkString(string str)
+        static internal bool checkString(string str)
         {
 
             if (checkNull(str) == true)
@@ -36,7 +36,8 @@ namespace DemoTrade_1
             }
         }
 
-        internal bool maxSum(double sum, double buy) 
+        /*Проверка на максимальное значение суммы*/
+        static internal bool maxSum(double sum, double buy) 
         {
             if (sum > buy)
             {

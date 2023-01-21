@@ -8,7 +8,7 @@ namespace DemoTrade_1
 {
     class Hash
     {
-         public HashResult getHashAmount(string convertibleString, string sold)
+         public static HashResult getHashAmount(string convertibleString, string sold)
         {
             IHash hash = HashFactory.Crypto.SHA3.CreateKeccak512();
             HashResult temphash = hash.ComputeString(convertibleString+sold);
@@ -17,7 +17,7 @@ namespace DemoTrade_1
         }
 
 
-        public User hashingUser(User user)
+        public static User hashingUser(User user)
         {
             user.Login = getHashAmount(user.Login, "sold").ToString();
             user.Password = getHashAmount(user.Password, "sold").ToString();

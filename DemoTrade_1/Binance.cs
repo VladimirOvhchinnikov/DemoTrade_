@@ -18,10 +18,7 @@ namespace DemoTrade_1
         private readonly string BinanceSymbol = "symbol=";
         private readonly string Binance24hr = "/24hr";
 
-
-        //https://api.binance.com/api/v1/ticker/24hr?
-
-
+        /*Запрос для получения цен по символу*/
         internal string WebRequestPrice(string symbol)
         {
             WebRequest WebRequestPrice = WebRequest.Create(BinanceUrl + BinanceApi + BinanceServerVersion +
@@ -29,13 +26,7 @@ namespace DemoTrade_1
             return getRequestPrice(WebRequestPrice);
         }
 
-        internal string WebRequestProcent24hr()
-        {
-            WebRequest WebRequestPrice = WebRequest.Create(BinanceUrl + BinanceApi + BinanceServerVersion +
-                BinanceTicker + Binance24hr);
-            return getRequestPrice(WebRequestPrice);
-        }
-
+        /*оТправка запроса на Binance и получение ответа от Binance*/
         private string getRequestPrice(WebRequest request)
         {
             WebResponse response = request.GetResponse();
@@ -45,7 +36,12 @@ namespace DemoTrade_1
             return sReader.ReadToEnd();
         }
 
-
-
+        /*Запрос для получения процентов всех символов*/
+        internal string WebRequestProcent24hr()
+        {
+            WebRequest WebRequestPrice = WebRequest.Create(BinanceUrl + BinanceApi + BinanceServerVersion +
+                BinanceTicker + Binance24hr);
+            return getRequestPrice(WebRequestPrice);
+        }
     }
 }
