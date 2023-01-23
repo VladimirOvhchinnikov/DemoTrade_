@@ -8,17 +8,25 @@ namespace DemoTrade_1
 {
     class Parsing
     {
+        //Закрытые атрибуты
+        private string[] arrPriceNoClear = new string[2];
+        private string[] arrPriceClear = new string[2];
 
-        public string parsPrice(string price) 
+        //Закрытая реализация
+        private string parsePrice(string price)
         {
             /*{"symbol":"BTCUSDT","price":"17265.19000000"}*/
 
-            string[] arr_1 = new string[2];
-            string[] arr_2 = new string[2];
-            arr_1 = price.Split(':');
-            arr_2 = arr_1[2].Split('"');
+            arrPriceNoClear = price.Split(':');
+            arrPriceClear = arrPriceNoClear[2].Split('"');
 
-            return arr_2[1];
+            return arrPriceClear[1];
+        }
+
+        //Открытый интерфейс
+        public string getParsePrice(string price)
+        {
+            return parsePrice(price);
         }
     }
 }
