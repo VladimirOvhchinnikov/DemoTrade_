@@ -56,7 +56,7 @@ namespace DemoTrade_1.Menu
             Parsing parsing = new Parsing();
             string Price = binance.WebRequestPrice(symbol);
             inputConsole(70, 1, "Price "+ symbol + " -> ");
-            inputConsole(84, 1, parsing.parsPrice(Price));
+            inputConsole(84, 1, parsing.getParsePrice(Price));
         }
 
         public void MoveMenu()

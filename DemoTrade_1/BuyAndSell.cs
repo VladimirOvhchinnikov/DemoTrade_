@@ -25,7 +25,7 @@ namespace DemoTrade_1
             double newbalanceUsdt = balanceUSDT - sum;
 
            // Цена криптовалюты  в данный момент
-            string price = (parsing.parsPrice(binance.WebRequestPrice(symbol+"USDT")));
+            string price = (parsing.getParsePrice(binance.WebRequestPrice(symbol+"USDT")));
 
             //смена для базы данных
             price = price.Replace('.', ',');
@@ -57,7 +57,7 @@ namespace DemoTrade_1
             double balanceSymbol = sqlite.inputBalanceUserOneTicker(user, symbol);
            
             // Цена криптовалюты  в данный момент
-            string price = (parsing.parsPrice(binance.WebRequestPrice(symbol + "USDT")));
+            string price = (parsing.getParsePrice(binance.WebRequestPrice(symbol + "USDT")));
             price = price.Replace('.', ',');
             //доллары от продажи
             double sellSymbol = sum * Convert.ToDouble(price);
